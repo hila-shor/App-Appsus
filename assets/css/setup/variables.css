@@ -1,12 +1,13 @@
 :root {
     /* color pallets */
-    --clr-primary: #627885;
-    --clr-secondary: #bdcbba;
-    --clr-accent: #C39579;
-    --clr-accent-hover: #6E5A54;
+    --clr-primary: hsl(201, 29%, 77%);
+    --clr-secondary: hsl(109, 40%, 84%);
+    --clr-accent: hsl(23, 68%, 62%);
+    --clr-accent-hover: hsl(14, 63%, 55%);
 
 
     /* vars  */
     --header-height: 3rem;
     --main-padding: 1rem
+        /*fdfdsf*/
 }
