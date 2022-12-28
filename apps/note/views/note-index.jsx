@@ -2,7 +2,7 @@ const { useState, useEffect } = React;
 
 import { NoteService } from '../services/note.service.js';
 import { AppAside } from '../cmps/app-aside.jsx';
-import { NoteBoard } from '../cmps/note-board.jsx';
+import { AppBoard } from '../cmps/app-board.jsx';
 import { AppSearch } from '../cmps/app-search.jsx';
 
 export function NoteIndex() {
@@ -29,7 +29,7 @@ export function NoteIndex() {
       <AppAside />
       <div className='app-main'>
         <AppSearch />
-        <NoteBoard />
+        <AppBoard notes={notes} />
       </div>
     </div>
   );

@@ -79,6 +79,15 @@ function _createNotes() {
           ],
         },
       },
+      {
+        id: 'n104',
+        owner: 'Andrey',
+        type: 'note-txt',
+        isPinned: true,
+        info: {
+          txt: 'Fullstack Me Baby!',
+        },
+      },
     ];
 
     storageService.saveToStorage(STORAGE_KEY, notes);
