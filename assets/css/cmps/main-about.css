@@ -1,0 +1,11 @@
+.main-about {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--clr-secondary);
+}
+
+
+.main-about>* {
+  margin-block: 1rem;
+}
