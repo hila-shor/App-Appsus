@@ -1,16 +1,11 @@
 :root {
-    --main-bg-color: lightblue;
-    --clr1: #627885;
-    /*0,2 */
-    --clr2: #bdcbba;
-    /*3,1 */
-    --clr3: #dbe3e5;
-    /*0,0 */
-
-
-    /* A. palletes i use */
+    /* color pallets */
     --clr-primary: #627885;
     --clr-secondary: #bdcbba;
     --clr-accent: #C39579;
     --clr-accent-hover: #6E5A54;
+
+
+    /* vars  */
+    --header-height: 3rem
 }

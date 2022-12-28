@@ -1,5 +1,27 @@
 /* classes for  aside header list that are same for both apps*/
 
+/* root container */
+.app-container {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+
+    background-color: var(--clr-primary);
+}
+
+.app-aside {
+    width: 400px;
+    background-color: var(--clr-secondary);
+}
+
+.app-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    background-color: var(--clr-secondary);
+}
+
 
 
 /* MEDIA QUERIES*/
