@@ -21,6 +21,15 @@ export function NoteIndex() {
     NoteService.query().then((notes) => updateNotes(notes));
   }
 
+  // CRUD
+  function deleteNote(noteId) {
+    console.log('deleting note: ', noteId);
+    NoteService.remove(noteId).then(() => {
+      const newNotes = notes.filter((note) => note.id !== noteId);
+      updateNotes(newNotes);
+    });
+  }
+
   if (!notes) <div>Loading</div>;
   console.log(notes);
 
@@ -29,8 +38,59 @@ export function NoteIndex() {
       <AppAside />
       <div className='app-main'>
         <AppSearch />
-        <AppBoard notes={notes} />
+        <AppBoard notes={notes} deleteNote={deleteNote} />
       </div>
     </div>
   );
 }
+
+/* function NoteText({ info, val = '', onChangeVal }) {
+  const { label } = info;
+  return (
+    <label>
+      {label}
+      <input
+        type='text'
+        value={val}
+        onChange={(ev) => {
+          onChangeVal(ev.target.value);
+        }}
+      />
+    </label>
+  );
+}
+
+function SelectBox({ info, val = '', onChangeVal }) {
+  const { label, opts } = info;
+  return (
+    <label>
+      {label}
+      <select
+        value={val}
+        onChange={(ev) => {
+          onChangeVal(ev.target.value);
+        }}>
+        <option value=''>Select an option</option>
+        {opts.map((opt) => (
+          <option key={opt}>{opt}</option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function TextArea({ info, val = '', onChangeVal }) {
+  const { label } = info;
+  return (
+    <label>
+      {label}
+      <textarea
+        value={val}
+        onChange={(ev) => {
+          onChangeVal(ev.target.value);
+        }}
+      />
+    </label>
+  );
+}
+ */
