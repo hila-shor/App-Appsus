@@ -1,5 +1,9 @@
 
 export function EmailIndex() {
-    return <div>mail app</div>
+
+    return <section className="email-index">
+                <h1>Hello Email index</h1> 
+            </section>
+
 }
 
