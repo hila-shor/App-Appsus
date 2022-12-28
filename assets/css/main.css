@@ -7,17 +7,24 @@
 
 @import './basics/base.css';
 @import './basics/helpers.css';
+
+/* Don't need yet*/
 /* @import './basics/layout.css'; */
 
-/* Views */
-@import './views/home.css';
 
+/* Views */
+@import './views/main-home.css';
+@import './views/main-about.css';
+
+
+/* TODO  Andrey's app css */
 /* @import './apps/note/views/note-app.css'; */
 
+/* TODO  Hila's app css */
 /* @import './apps/mail/views/mail-app.css'; */
 
-/* Cmps */
 
+/* Cmps */
 @import './cmps/user-msg.css';
 @import './cmps/app-header.css';
 

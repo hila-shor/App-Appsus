@@ -1,6 +1,11 @@
 :root {
     --main-bg-color: lightblue;
-    --clr1: #627885; /*0,2*/
-    --clr2:#bdcbba; /*3,1 */
-    --clr3: #dbe3e5; /*0,0*/
+    --clr1: #627885;
+    /*0,2 */
+    --clr2: #bdcbba;
+    /*3,1 */
+    --clr3: #dbe3e5;
+    /*0,0 */
+    --clr31: #6E5A54;
+    --clr32: #C39579;
 }
