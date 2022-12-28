@@ -1,3 +1,3 @@
-export function NoteText() {
-  return <span>note text</span>;
+export function NoteText({ info }) {
+  return <p>{info.txt}</p>;
 }

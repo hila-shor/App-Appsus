@@ -31,7 +31,7 @@ export function NoteIndex() {
   }
 
   if (!notes) <div>Loading</div>;
-  console.log(notes);
+  // console.log(notes);
 
   return (
     <div className='app-container'>
@@ -43,54 +43,3 @@ export function NoteIndex() {
     </div>
   );
 }
-
-/* function NoteText({ info, val = '', onChangeVal }) {
-  const { label } = info;
-  return (
-    <label>
-      {label}
-      <input
-        type='text'
-        value={val}
-        onChange={(ev) => {
-          onChangeVal(ev.target.value);
-        }}
-      />
-    </label>
-  );
-}
-
-function SelectBox({ info, val = '', onChangeVal }) {
-  const { label, opts } = info;
-  return (
-    <label>
-      {label}
-      <select
-        value={val}
-        onChange={(ev) => {
-          onChangeVal(ev.target.value);
-        }}>
-        <option value=''>Select an option</option>
-        {opts.map((opt) => (
-          <option key={opt}>{opt}</option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-function TextArea({ info, val = '', onChangeVal }) {
-  const { label } = info;
-  return (
-    <label>
-      {label}
-      <textarea
-        value={val}
-        onChange={(ev) => {
-          onChangeVal(ev.target.value);
-        }}
-      />
-    </label>
-  );
-}
- */

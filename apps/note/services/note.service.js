@@ -60,7 +60,7 @@ function _createNotes() {
         owner: 'Andrey',
         type: 'note-img',
         info: {
-          url: 'http://some-img/me',
+          url: 'https://picsum.photos/200/100',
           title: 'Bobi and Me',
         },
         style: {
@@ -74,8 +74,8 @@ function _createNotes() {
         info: {
           label: 'Get my stuff together',
           todos: [
-            { txt: 'Driving liscence', doneAt: null },
-            { txt: 'Coding power', doneAt: 187111111 },
+            { id: 't100', txt: 'Driving liscence', doneAt: null },
+            { id: 't101', txt: 'Coding power', doneAt: 187111111 },
           ],
         },
       },
