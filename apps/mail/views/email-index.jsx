@@ -1,7 +1,9 @@
 const { useState, useEffect } = React
 
-import { EmailList } from "../cmps/email-list.jsx"
-import { emailService } from "../../mail/services/email.service.js"
+import {EmailList} from "../cmps/email-list.jsx"
+import {EmailAside} from "../cmps/email-aside.jsx"
+import {EmailSearch} from "../cmps/email-search.jsx"
+import {emailService} from "../../mail/services/email.service.js"
 
 
 export function EmailIndex() {
@@ -21,9 +23,22 @@ function loadEmails() {
 }
 
 console.log('emails from email-index', emails)
-return <section className="email-index">
-            <h1>Hello Email index</h1> 
-            <EmailList emails={emails}/>
+return <section className="email-index app-container">
+            <EmailAside/>
+            <div className="app-main">
+                <EmailSearch/>
+                <EmailList emails={emails}/>
+            </div>
         </section>
 
 }
+
+// return (
+//     <div className='app-container'>
+//       <AppAside />
+//       <div className='app-main'>
+//         <AppSearch />
+//         <AppBoard notes={notes} deleteNote={deleteNote} />
+//       </div>
+//     </div>
+//   );

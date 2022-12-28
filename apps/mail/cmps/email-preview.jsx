@@ -1,5 +1,6 @@
 const { useState, Fragment } = React
 
+import {utilService} from '../../../services/util.service.js'
 export function EmailPreview({email}){
 
   const [isExpanded, setIsExpanded] = useState(false)
@@ -13,7 +14,8 @@ export function EmailPreview({email}){
             <td>{email.subject}</td>
             <td>{email.body}</td>
             <td>❌</td>
-            <td>{email.sendAt}</td>
+            <td>📩</td>
+            <td>{utilService.convertTimestamp(email.sentAt)}</td>
 
         </tr>
         <tr hidden={!isExpanded}>

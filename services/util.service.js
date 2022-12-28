@@ -6,6 +6,7 @@ export const utilService = {
     padNum,
     getDayName,
     getMonthName,
+    convertTimestamp
 }
 
 function makeId(length = 6) {
@@ -59,4 +60,20 @@ function getMonthName(date) {
         "July", "August", "September", "October", "November", "December"
     ]
     return monthNames[date.getMonth()]
+}
+
+function convertTimestamp(timestamp) {
+    const date = new Date(timestamp);
+    const currentDate = new Date();
+    const diffInDays = Math.floor((currentDate - date) / (1000 * 60 * 60 * 24));
+    if (diffInDays > 0) {
+        const month = date.toLocaleString('default', { month: 'long' });
+        return `${date.getDate()} ${month}, ${date.getHours()}:${date.getMinutes()}`;
+    }
+    const diffInHours = Math.floor((currentDate - date) / (1000 * 60 * 60));
+    if (diffInHours > 0) {
+        return `${date.getHours()}:${date.getMinutes()}`;
+    }
+    const diffInMinutes = Math.floor((currentDate - date) / (1000 * 60));
+    return `${date.getHours()}:${date.getMinutes()}`;
 }
