@@ -19,7 +19,10 @@
 
 
 /* TODO  Andrey's app css */
-/* @import './apps/note/views/note-app.css'; */
+@import './apps/note/views/note-index.css';
+@import './apps/note/cmps/app-aside.css';
+@import './apps/note/cmps/board.css';
+@import './apps/note/cmps/note.css';
 
 /* TODO  Hila's app css */
 /* @import './apps/mail/views/mail-app.css'; */

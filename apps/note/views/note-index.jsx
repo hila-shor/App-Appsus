@@ -1,6 +1,9 @@
 const { useState, useEffect } = React;
 
 import { NoteService } from '../services/note.service.js';
+import { AppAside } from '../cmps/app-aside.jsx';
+import { NoteBoard } from '../cmps/note-board.jsx';
+import { AppSearch } from '../cmps/app-search.jsx';
 
 export function NoteIndex() {
   //  keeps currUser for note object( note= { owner:'Andrey' }) and for user greetings
@@ -23,10 +26,10 @@ export function NoteIndex() {
 
   return (
     <div className='app-container'>
-      <div className='app-aside'></div>
+      <AppAside />
       <div className='app-main'>
-        <div className='search'>Search</div>
-        <div className='board'></div>
+        <AppSearch />
+        <NoteBoard />
       </div>
     </div>
   );

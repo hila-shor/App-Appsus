@@ -10,15 +10,19 @@
 
 .app-aside {
     width: 400px;
+    padding: var(--main-padding);
     background-color: var(--clr-secondary);
 }
 
 .app-main {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .search {
+    width: 100%;
+    padding: var(--main-padding);
     background-color: var(--clr-secondary);
 }
 
