@@ -6,6 +6,12 @@
     /*3,1 */
     --clr3: #dbe3e5;
     /*0,0 */
-    --clr31: #6E5A54;
-    --clr32: #C39579;
+
+
+    /* A. palletes i use */
+    --clr-primary: #627885;
+    --clr-secondary: #bdcbba;
+    --clr-accent: #C39579;
+    --clr-accent-hover: #6E5A54;
+
 }
