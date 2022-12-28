@@ -13,8 +13,9 @@
 
 
 /* Views */
-@import './views/main-home.css';
-@import './views/main-about.css';
+@import './views/home.css';
+@import './views/about.css';
+@import './views/app.css';
 
 
 /* TODO  Andrey's app css */
@@ -26,6 +27,7 @@
 
 /* Cmps */
 @import './cmps/user-msg.css';
-@import './cmps/app-header.css';
+@import './cmps/header.css';
+@import './cmps/footer.css';
 
 /* @import './apps/mail/cmps/mail-list.css'; */
