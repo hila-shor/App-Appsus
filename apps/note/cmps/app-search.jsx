@@ -1,3 +1,9 @@
+import { NoteNew } from './note-new.jsx';
+
 export function AppSearch() {
-  return <div className='search'>search</div>;
+  return (
+    <div className='search'>
+      <NoteNew />
+    </div>
+  );
 }

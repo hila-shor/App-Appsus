@@ -9,10 +9,10 @@ import { Modal } from '../../modal.jsx';
 export function NoteIndex() {
   console.log('rendering note app');
   //  keeps currUser for note object( note= { owner:'Andrey' }) and for user greetings
-  const [user, changeUser] = useState('Andrey');
+  const [user, setUser] = useState('Andrey');
 
   // notes
-  const [notes, updateNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
   // edit/ new note modal
   const [modal, toShow] = useState(false);
 
@@ -21,7 +21,7 @@ export function NoteIndex() {
     loadNotes();
   }, []);
   function loadNotes() {
-    NoteService.query().then((notes) => updateNotes(notes));
+    NoteService.query().then((notes) => setNotes(notes));
   }
 
   //edit notes
@@ -30,11 +30,11 @@ export function NoteIndex() {
   // }, [modal]);
 
   // CRUD
-  function deleteNote(noteId) {
+  function removeNote(noteId) {
     console.log('deleting note: ', noteId);
     NoteService.remove(noteId).then(() => {
       const newNotes = notes.filter((note) => note.id !== noteId);
-      updateNotes(newNotes);
+      setNotes(newNotes);
     });
   }
 
@@ -53,7 +53,7 @@ export function NoteIndex() {
       <AppAside />
       <div className='app-main'>
         <AppSearch />
-        <AppBoard notes={notes} deleteNote={deleteNote} editNote={editNote} />
+        <AppBoard notes={notes} removeNote={removeNote} editNote={editNote} />
       </div>
     </div>
   );

@@ -1,0 +1,24 @@
+.form-new-note {
+    position: relative;
+    width: fit-content;
+}
+
+.btn-note,
+.btn-img,
+.btn-todo {
+    position: absolute;
+    top: 0%;
+
+}
+
+.btn-note {
+    right: 0%;
+}
+
+.btn-img {
+    right: 8%;
+}
+
+.btn-todo {
+    right: 16%;
+}

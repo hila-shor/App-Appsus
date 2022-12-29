@@ -12,6 +12,7 @@ export const NoteService = {
   remove,
   save,
   getDefaultFilter,
+  getEmptyNote,
 };
 
 function query(filterBy = getDefaultFilter()) {
@@ -40,6 +41,14 @@ function save(note) {
 
 function getDefaultFilter() {
   return {};
+}
+
+function getEmptyNote() {
+  return {
+    id: utilService.makeId,
+    owner: 'Andrey',
+    info: {},
+  };
 }
 
 function _createNotes() {

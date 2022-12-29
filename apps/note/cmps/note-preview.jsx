@@ -4,9 +4,9 @@ import { NoteText } from './notes/note-text.jsx';
 import { NoteImg } from './notes/note-img.jsx';
 import { NoteTodo } from './notes/note-todo.jsx';
 
-export function Note({ note, type, deleteNote, editNote }) {
+export function NotePreview({ note, type, removeNote, editNote }) {
   function onDeleteNote() {
-    deleteNote(note.id);
+    removeNote(note.id);
   }
 
   function onEditNote() {

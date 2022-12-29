@@ -5,6 +5,8 @@
     --clr-accent: hsl(23, 68%, 62%);
     --clr-accent-hover: hsl(14, 63%, 55%);
 
+    --clr-input: hsl(14, 100%, 95%);
+
 
     /* vars  */
     --header-height: 3rem;
