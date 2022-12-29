@@ -23,6 +23,8 @@ export function NoteNew() {
     const type = ev.nativeEvent.submitter.name;
     console.log('name', type);
     console.log('ev.target', ev.target);
+
+    ev.target[0].value;
     if (!value) setNoteType(type);
     else createNote(value);
 
