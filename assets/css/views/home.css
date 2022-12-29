@@ -1,6 +1,21 @@
-.main-home {
-  height: 100vh;
-  color: blue;
+.home {
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--main-padding);
   background-image: url("/assets/img/home1.jpg");
-  background-color: var(--clr-secondary);
+  background-color: var(--clr-primary);
 }
+
+
+/* MEDIA QUERIES*/
+
+/* mobile only  */
+@media (max-width: 600px) {}
+
+/* tablet  */
+@media (min-width: 600px) {}
+
+/* laptop  */
+@media (min-width: 768px) {}
+
+/* monitor  */
+@media (min-width: 1200px) {}

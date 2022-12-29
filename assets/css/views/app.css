@@ -4,14 +4,13 @@
 .app-container {
     min-height: calc(100vh - var(--header-height));
     display: flex;
-
     background-color: var(--clr-primary);
 }
 
 .app-aside {
     width: 400px;
     padding: var(--main-padding);
-    background-color: var(--clr-secondary);
+    border-inline-end: 1px solid var(--clr-secondary);
 }
 
 .app-main {
@@ -23,9 +22,7 @@
 .search {
     width: 100%;
     padding: var(--main-padding);
-    background-color: var(--clr-secondary);
 }
-
 
 
 /* MEDIA QUERIES*/
@@ -34,11 +31,10 @@
 @media (max-width: 600px) {}
 
 /* tablet  */
-@media (min-width: 768px) {}
+@media (min-width: 600px) {}
 
 /* laptop  */
-@media (min-width: 992px) {}
-
+@media (min-width: 768px) {}
 
 /* monitor  */
 @media (min-width: 1200px) {}

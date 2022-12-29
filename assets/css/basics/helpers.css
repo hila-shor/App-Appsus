@@ -21,3 +21,81 @@
 .grid {
     display: grid;
 }
+
+/*=========== LIST ===========*/
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* ======= LIMITED TEXT =======   */
+.limitedText {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ========= HIDDEN ======== */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .hide-on-small-screen {
+        display: none;
+    }
+
+    .hide-on-big-screen {
+        display: initial;
+    }
+}
+
+@media (min-width: 600px) {
+    .hide-on-small-screen {
+        display: initial;
+    }
+
+    .hide-on-big-screen {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+
+/* ========== OTHER ===========  */
+/* center icons in buttons  */
+.place-items-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Simple and useful CSS Debugging Technique */
+.debug * {
+    outline: 1px solid gold
+}
+
+/*============== SCREEN ============== */
+/* screen when menu opened  <div class="main-screen" onclick="toggleMenu()"></div> */
+.main-screen {
+    position: fixed;
+    inset: var(--h-header) 0 0 0;
+    background-color: #000;
+    background-color: rgb(0 0 0 / 70%);
+
+    cursor: pointer;
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+body.menu-open .main-screen {
+    pointer-events: auto;
+    opacity: 1;
+}

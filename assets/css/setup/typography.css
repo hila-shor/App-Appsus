@@ -1,0 +1,49 @@
+/* typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(../../fonts/Ubuntu/Ubuntu-Light.ttf);
+}
+
+@font-face {
+    font-family: Dosis;
+    src: url(../../fonts/Dosis/Dosis-Regular.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../../fonts/Lato/Lato-Regular.ttf);
+}
+
+
+html {
+    font-family: Lato;
+}
+
+p {
+    font-family: Ubuntu, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Dosis;
+    font-weight: 600;
+    line-height: 2;
+}
+
+.btn {
+    font-weight: 400;
+}
+
+.btn:hover {
+    font-weight: 500;
+}

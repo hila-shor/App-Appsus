@@ -1,11 +1,27 @@
-.main-about {
+.about {
   display: flex;
   flex-direction: column;
-
-  background-color: var(--clr-secondary);
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--main-padding);
+  background-color: var(--clr-primary);
 }
 
 
-.main-about>* {
+/* .main-about>* {
   margin-block: 1rem;
-}
+} */
+
+
+/* MEDIA QUERIES*/
+
+/* mobile only  */
+@media (max-width: 600px) {}
+
+/* tablet  */
+@media (min-width: 600px) {}
+
+/* laptop  */
+@media (min-width: 768px) {}
+
+/* monitor  */
+@media (min-width: 1200px) {}

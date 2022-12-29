@@ -1,0 +1,51 @@
+/* ========== BUTTON STYLES ==========  */
+/* button collection  */
+.btn-hero {
+    border-width: 0.2em;
+    border-style: solid;
+    border-radius: 2em;
+
+    padding: 1em 2em;
+
+    text-align: center;
+    font-size: clamp(.8rem, 0.67vw + 0.60rem, 1.1rem);
+    font-weight: 600;
+}
+
+.btn {
+    border-width: 0.15em;
+    border-style: solid;
+    border-radius: .2em;
+
+    padding: .5em 1em;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.btn-style1 {
+    background-color: var(--clr-secondary);
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+}
+
+.btn-style2 {
+    background-color: var(--clr-accent);
+    border-color: var(--clr-accent);
+    color: var(--clr-primary);
+}
+
+.btn-style3 {
+    background-color: transparent;
+    border-color: var(--clr-border);
+    color: var(--clr-accent);
+}
+
+
+
+/* button:hover{} */
+
+
+
+/* ============= TOOLTIPS =============  */
