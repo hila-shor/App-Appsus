@@ -2,18 +2,29 @@ const { Fragment } = React
 
 import {EmailPreview} from "./email-preview.jsx"
 
-export function EmailList({emails}) {
+export function EmailList({emails, onRemoveEmail}) {
 
-    // const [emails, setEmails] = useState([])
-    console.log('EmailList emails', emails)
-    return <section className="email-list">
-                <table className="table">
-                    <tbody>
+   
+    return  <section className="email-list app-main">
+                
+                    <div>
                         {emails.map(email =>  
-                            <EmailPreview key={email.id} email={email} />
+                            <EmailPreview key={email.id} email={email} onRemoveEmail={onRemoveEmail} />
                         )}
-                    </tbody>
-                </table>
+                    </div>
+                
             </section>
+    
+
+
+    // <section className="email-list">
+    //             <table className="table">
+    //                 <tbody>
+    //                     {emails.map(email =>  
+    //                         <EmailPreview key={email.id} email={email} onRemoveEmail={onRemoveEmail} />
+    //                     )}
+    //                 </tbody>
+    //             </table>
+    //         </section>
 
 }

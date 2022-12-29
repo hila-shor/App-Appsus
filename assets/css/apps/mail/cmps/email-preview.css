@@ -1,0 +1,8 @@
+.email-preview{
+  border-bottom: 1px solid;
+  background-color: lightgray;
+}
+
+.email-preview>div{
+  margin-left: 15px;
+}

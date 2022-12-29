@@ -1,5 +1,5 @@
-.user-msg {
-    background-color: lightgray;
+/* .user-msg {
+    background-color: blue;
     padding: 1em;
     position: absolute;
     top: 1em;
@@ -7,7 +7,7 @@
 }
 
 .user-msg.success {
-    background-color: lightgreen;
+    background-color: green;
 }
 
 .user-msg.error {
@@ -18,4 +18,15 @@
 .user-msg button{
     float: right;
     margin: 1em;
+} */
+
+.user-msg {
+    background-color: lightgray;
+    padding: .5em 4px;
+    position: fixed;
+    bottom: 5px;
+    right: 1em;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
 }

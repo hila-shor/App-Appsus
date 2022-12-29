@@ -1,30 +1,39 @@
 const { useState, Fragment } = React
+const {Link} = ReactRouterDOM
 
 import {utilService} from '../../../services/util.service.js'
-export function EmailPreview({email}){
+
+export function EmailPreview({email, onRemoveEmail}){
 
   const [isExpanded, setIsExpanded] = useState(false)
   // const [isHover, setIsHover] = useState(true)
 
-  return <Fragment>
-        <tr onClick={() => {
-            setIsExpanded(!isExpanded)
-        }}>
-            <td>{email.from}</td>
-            <td>{email.subject}</td>
-            <td>{email.body}</td>
-            <td>❌</td>
-            <td>📩</td>
-            <td>{utilService.convertTimestamp(email.sentAt)}</td>
 
-        </tr>
-        <tr hidden={!isExpanded}>
-            <td colSpan="4">
-                <p>Lorem ipsum dolor</p>
-            </td>
-        </tr>
+  function setEmailFrom(email){
+    console.log(email.from)
+    let emailFrom = email.from
+    let atIdx =  emailFrom.indexOf("@")
+    console.log(atIdx)
+   
+    let nameFrom =  emailFrom.substring(0, atIdx)
+    if (atIdx !== -1) return nameFrom
+  
+}
 
-        </Fragment>
+  return <div className="email-preview flex">
+            <div>🏳️</div>
+            <div>⭐</div>
+            <Link className="flex" to={`/email/${email.id}`}>
+                <div>{setEmailFrom(email)}</div>
+                <div>{email.subject}</div>
+                <div>{email.body}</div>
+            </Link>
+            <div>❌</div>
+            <div>📩</div>
+            <div>{utilService.convertTimestamp(email.sentAt)}</div>
+        </div>
+  
+
 
 
 }

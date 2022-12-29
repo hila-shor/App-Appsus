@@ -7,7 +7,9 @@ const EMAIL_KEY = 'emailDB'
 _createEmails()
 
 export const emailService = {
-  query
+  query,
+  remove,
+  get
 }
 
 const loggedinUser = { email: 'hila@appsus.com', fullname: 'Hila Shor' }
@@ -46,11 +48,18 @@ function _createEmails() {
 
 }
 
-
 function query() {
 
   return asyncStorageService.query(EMAIL_KEY)
     .then(emails => {
       return emails
     })
+}
+
+function remove(emailId) {
+  return asyncStorageService.remove(EMAIL_KEY, emailId)
+}
+
+function get(emailId) {
+  return asyncStorageService.get(EMAIL_KEY, emailId)
 }
