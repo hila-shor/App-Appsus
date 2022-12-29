@@ -24,6 +24,7 @@
     font-weight: 400;
 }
 
+/* different styles for buttons  */
 .btn-style1 {
     background-color: var(--clr-secondary);
     border-color: var(--clr-accent);
@@ -38,10 +39,11 @@
 
 .btn-style3 {
     background-color: transparent;
-    border-color: var(--clr-border);
+    border-color: var(--clr-accent);
     color: var(--clr-accent);
 }
 
+/* aside buttons  */
 .btn-aside {
     font-weight: 400;
     font-size: 1.1rem;
@@ -49,6 +51,7 @@
 
     margin-bottom: 0.3em;
     width: 100%;
+    padding: 0 1em;
     text-align: start;
 }
 

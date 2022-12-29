@@ -30,6 +30,7 @@
 
 
 /* Cmps */
+@import './cmps/modal.css';
 @import './cmps/user-msg.css';
 @import './cmps/header.css';
 @import './cmps/footer.css';

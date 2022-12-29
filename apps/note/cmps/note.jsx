@@ -4,9 +4,13 @@ import { NoteText } from './notes/note-text.jsx';
 import { NoteImg } from './notes/note-img.jsx';
 import { NoteTodo } from './notes/note-todo.jsx';
 
-export function Note({ note, type, deleteNote }) {
+export function Note({ note, type, deleteNote, editNote }) {
   function onDeleteNote() {
     deleteNote(note.id);
+  }
+
+  function onEditNote() {
+    editNote(note.id);
   }
   // console.log('in note', note, 'type', type);
 
@@ -23,11 +27,14 @@ export function Note({ note, type, deleteNote }) {
 
   return (
     <div className='note'>
-      <div className='note-header'>header</div>
+      <div className='note-header full'></div>
       {getDynamicNote(note)}
-      <Link to='/note/edit'>Edit note</Link>
+      {/* <Link to='/note/edit'>Edit note</Link> */}
 
-      <button className='.btn' onClick={onDeleteNote}>
+      <button className='btn btn-style3' onClick={onEditNote}>
+        Edit
+      </button>
+      <button className='btn btn-style3' onClick={onDeleteNote}>
         Delete
       </button>
     </div>

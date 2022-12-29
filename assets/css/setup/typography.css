@@ -22,11 +22,12 @@
 
 
 html {
-    font-family: Lato;
+    font-family: Ubuntu;
 }
 
 p {
-    font-family: Ubuntu, sans-serif;
+    /* font-family: Ubuntu, sans-serif; */
+    font-weight: 500;
 }
 
 h1,

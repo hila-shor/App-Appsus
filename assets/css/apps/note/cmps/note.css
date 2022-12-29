@@ -4,7 +4,15 @@
     height: fit-content;
     display: flex;
     flex-direction: column;
-    padding: 1em;
     margin: 0 auto;
     border: 1px solid var(--clr-secondary);
+}
+
+.note>*:not(.full) {
+    margin: 0 var(--main-padding);
+}
+
+.note-header {
+    background-color: var(--clr-secondary);
+    height: var(--el-height);
 }
