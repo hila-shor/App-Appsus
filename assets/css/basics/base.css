@@ -36,3 +36,15 @@ p {
     max-width: 70ch;
     line-height: 2;
 }
+
+/* ========== BUTTONS INPUT========= */
+button,
+.btn,
+input {
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+
+    height: var(--el-height)
+}

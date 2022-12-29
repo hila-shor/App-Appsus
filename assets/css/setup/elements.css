@@ -42,6 +42,21 @@
     color: var(--clr-accent);
 }
 
+.btn-aside {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: var(--el-height);
+
+    margin-bottom: 0.3em;
+    width: 100%;
+    text-align: start;
+}
+
+.btn-aside:hover {
+    font-weight: 400;
+    background-color: var(--clr-secondary);
+}
+
 
 
 /* button:hover{} */

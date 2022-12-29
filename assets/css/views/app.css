@@ -11,6 +11,10 @@
     width: 400px;
     padding: var(--main-padding);
     border-inline-end: 1px solid var(--clr-secondary);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .app-main {
