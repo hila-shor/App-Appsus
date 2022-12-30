@@ -1,0 +1,43 @@
+/* LAYOUT */
+
+.app-aside.side-nav{
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.side-nav-list{
+  flex-direction: column;
+}
+
+/* compose */
+.compose-btn {
+  gap: 0.625rem;
+  border:0.15em solid var(--clr-input) ;
+  border-radius: 1em;
+  box-shadow: 0px 0px 2px 1px var(--clr-accent);
+  padding-inline-end: 1.5rem;
+  padding-block: 10px;
+}
+
+.compose-txt{
+  font-size:0.875rem ;
+}
+
+.compose-icon{
+  margin-inline: 0.5rem;
+}
+/* input {
+  position: relative;
+  width: 30rem;
+  padding: .5em 1em;
+
+  background-color: var(--clr-input);
+  border-color: var(--clr-accent);
+  border-width: 0.15em;
+  border-style: solid;
+  border-radius: .2em;
+  box-shadow: 0px 0px 2px 1px var(--clr-accent);
+
+  font-size: 1rem;
+  font-weight: 400;
+} */

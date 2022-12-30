@@ -11,13 +11,15 @@
 .fa.icon-logo-email::before{
   content:"\40";
   font-size: 40px;
+  color: var(--clr-accent);
 }
 
 
 
 .email-logo div {
   font-family: Dosis;
-  line-height: 60px;
+  font-size: ;
+  /* line-height: 60px; */
 }
 
 .logo{
@@ -26,8 +28,8 @@
 }
 
 .icon-wrapper{
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   justify-content: center;
   align-items: center;
  
@@ -39,6 +41,10 @@
   height: 60px;
 }
 
-.icon-logo-email{
+/* .icon-logo-email{
   color: blueviolet;
+} */
+.logo-wrapper{
+  justify-content: center;
+  align-items: center;
 }

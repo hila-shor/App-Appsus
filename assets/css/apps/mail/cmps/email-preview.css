@@ -44,10 +44,7 @@
 
 /* icons*/
 
-@font-face {
-  font-family: fa-solid;
-  src: url(../../../../fonts/fa-icons/fa-solid-900.ttf);
-}
+
 
 
 .fa-solid::before{
