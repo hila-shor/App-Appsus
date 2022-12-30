@@ -1,6 +1,5 @@
 .email-preview> *{
   margin: 0;
-  /* line-height: 1.25px; */
   font-size: 1rem;
 }
 .email-preview{
@@ -46,7 +45,7 @@
 
 
 
-
+/* 
 .fa-solid::before{
   font-family: fa-solid;
 }
@@ -54,7 +53,5 @@
 .fa-solid.item2::before{
   content:"\f005";
   color: #f3c749;
-  
-  
-}
+} */
 

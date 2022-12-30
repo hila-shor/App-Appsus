@@ -111,7 +111,7 @@ function convertTimestamp(timestamp) {
   const currentDate = new Date();
   const diffInDays = Math.floor((currentDate - date) / (1000 * 60 * 60 * 24));
   if (diffInDays > 0) {
-    const month = date.toLocaleString('default', { month: 'long' });
+    const month = date.toLocaleString('default', { month: 'short' });
     return `${date.getDate()} ${month}, ${date.getHours()}:${date.getMinutes()}`;
   }
   const diffInHours = Math.floor((currentDate - date) / (1000 * 60 * 60));

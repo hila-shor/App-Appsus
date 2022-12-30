@@ -1,3 +1,3 @@
 export function EmailSearch() {
-  return <section className='search email'>search</section>;
+  return <section className='email-search search'>search</section>;
 }
