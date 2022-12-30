@@ -1,0 +1,44 @@
+@font-face {
+  font-family: fa;
+  src: url(../../fonts/fa-icons/fa-regular-400.ttf);
+}
+
+/* HELPER ICONS FONT AWESOM*/
+
+.fa::before {
+  font-family: fa;
+}
+.fa.icon-logo-email::before{
+  content:"\40";
+  font-size: 40px;
+}
+
+
+
+.email-logo div {
+  font-family: Dosis;
+  line-height: 60px;
+}
+
+.logo{
+  margin-inline-end: 8px;
+  
+}
+
+.icon-wrapper{
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.email.search{
+  width: 60px;
+  height: 60px;
+}
+
+.icon-logo-email{
+  color: blueviolet;
+}

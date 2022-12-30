@@ -1,0 +1,26 @@
+.app-container {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  background-color: var(--clr-primary);
+}
+
+.app-aside {
+  width: 400px;
+  padding: var(--main-padding);
+  border-inline-end: 1px solid var(--clr-secondary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  width: 100%;
+  padding: var(--main-padding);
+}

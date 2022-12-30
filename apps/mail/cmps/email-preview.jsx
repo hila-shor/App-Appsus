@@ -6,6 +6,7 @@ import {utilService} from '../../../services/util.service.js'
 export function EmailPreview({email, onRemoveEmail}){
 
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isHover, setIsHover] = useState(false)
   // const [isHover, setIsHover] = useState(true)
 
 
@@ -20,19 +21,31 @@ export function EmailPreview({email, onRemoveEmail}){
   
 }
 
-  return <div className="email-preview flex">
-            <div>🏳️</div>
-            <div>⭐</div>
-            <Link className="flex" to={`/email/${email.id}`}>
-                <div>{setEmailFrom(email)}</div>
-                <div>{email.subject}</div>
-                <div>{email.body}</div>
+  return <div className="email-preview grid-container"
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}>
+   
+            <div className='item item1'>🏳️</div>
+            <div className='item item2 fa-solid'></div>
+            <Link to={`/email/${email.id}`}>
+                <div className=' item item3'>{setEmailFrom(email)}</div>
             </Link>
-            <div>❌</div>
-            <div>📩</div>
-            <div>{utilService.convertTimestamp(email.sentAt)}</div>
+            <Link to={`/email/${email.id}`}>
+                <div className="item item4 ellipsis">
+                    {`${email.subject} - ${email.body}` }</div>
+            </Link>
+            {/* <Link to={`/email/${email.id}`}>
+                <div className='item item4'>{email.body}</div>
+            </Link> */}
+            
+            {isHover &&(<div className="edit-flex">
+                <div className="delete-email item item4 " onClick={()=>onRemoveEmail(email.id) }>❌</div>
+                <div className='toggle-read item item5'>📩</div>
+            </div>)}
+                <div className='email-time item item6'>{utilService.convertTimestamp(email.sentAt)}
+            </div>
         </div>
-  
+
 
 
 

@@ -40,7 +40,19 @@ function _createEmails() {
         isRead: false,
         sentAt: 1551133936594,
         from: 'momo@momo.com'
+      },
+      {
+        id: 'h555',
+        criteria: {
+          status: 'index'
+        },
+        subject: 'Lorem ipsum dolor',
+        body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt error, adipisci fugiat, minima nam rem est ipsa natus unde praesentium ratione, neque illum quas explicabo',
+        isRead: false,
+        sentAt: 3456733930594,
+        from: 'dodo@momo.com'
       }
+
     ]
     storageService.saveToStorage(EMAIL_KEY, emails)
   }
