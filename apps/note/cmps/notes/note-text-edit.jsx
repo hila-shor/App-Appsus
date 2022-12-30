@@ -1,5 +1,5 @@
 const { Fragment } = React;
 
-export function NoteTxtEdit() {
+export function NoteTxtEdit({ note, noteToEdit }) {
   return <Fragment>txt edit</Fragment>;
 }

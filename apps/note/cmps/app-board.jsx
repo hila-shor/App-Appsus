@@ -2,7 +2,7 @@ import { NotePreview } from './note-preview.jsx';
 import { NoteService } from '../services/note.service.js';
 
 export function AppBoard({ notes, removeNote, editNote }) {
-  console.log('board', notes);
+  // console.log('board', notes);
 
   return (
     <section className='note-board'>

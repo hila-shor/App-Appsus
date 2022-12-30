@@ -23,29 +23,24 @@ export function NoteNew({ loadNotes }) {
   }
 
   function createNote(value) {
-    console.log('create note', noteType);
     let newNote = NoteService.getEmptyNote();
     if (!noteType.localeCompare('note-txt')) {
-      console.log(noteType.localeCompare('note-txt'));
       newNote = {
         ...newNote,
         type: 'note-txt',
         info: { ...newNote.info, txt: value },
       };
       NoteService.save(newNote).then((note) => {
-        console.log('note text saved', note);
         loadNotes();
         //   showSuccessMsg('Note saved!');
       });
     } else if (!noteType.localeCompare('note-img')) {
-      console.log(noteType.localeCompare('note-img'));
       newNote = {
         ...newNote,
         type: 'note-img',
         info: { ...newNote.info, url: value },
       };
       NoteService.save(newNote).then((note) => {
-        console.log('note text saved', note);
         loadNotes();
         //   showSuccessMsg('Note saved!');
       });
@@ -59,7 +54,6 @@ export function NoteNew({ loadNotes }) {
         info: { ...newNote.info, todos },
       };
       NoteService.save(newNote).then((note) => {
-        console.log('note todo saved', note);
         loadNotes();
         //   showSuccessMsg('Note saved!');
       });

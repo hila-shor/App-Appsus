@@ -14,7 +14,13 @@ export function NoteIndex() {
   // notes
   const [notes, setNotes] = useState([]);
   // edit/ new note modal
-  const [modal, setModal] = useState({ noteId: null, toShow: false });
+  const [modal, setModal] = useState({
+    cmp: null,
+    cmpEdit: null,
+    toShow: false,
+  });
+  // edit / new note
+  const [noteToEdit, setNoteToEdit] = useState({});
 
   //load notes
   useEffect(() => {
@@ -34,8 +40,11 @@ export function NoteIndex() {
   }
 
   function editNote(noteId) {
-    console.log('editing note: ', noteId);
-    setModal({ noteId, toShow: true });
+    NoteService.get(noteId).then((note) => {
+      console.log('editing note: ', noteId);
+      setNoteToEdit(note);
+      setModal({ cmp: note, setCmp: setNoteToEdit, toShow: true });
+    });
   }
 
   if (!notes) <div>Loading</div>;

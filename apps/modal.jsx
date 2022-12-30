@@ -10,27 +10,26 @@ export function Modal({ modal, setModal }) {
     elModal.current.showModal();
   }, []);
 
-  function getDynamicNoteEdit({ type, info }) {
+  function getDynamicComponent(modal) {
+    const type = modal.cmp.type;
     switch (type) {
       case 'note-txt':
-        return <NoteText info={info} />;
+        return <NoteTxtEdit note={modal.cmp} noteToEdit={modal.setCmp} />;
       case 'note-img':
-        return <NoteImg info={info} />;
+        return <NoteImgEdit note={modal.cmp} noteToEdit={modal.setCmp} />;
       case 'note-todos':
-        return <NoteTodo info={info} />;
+        return <NoteTodoEdit note={modal.cmp} noteToEdit={modal.setCmp} />;
     }
   }
 
   return (
     <dialog className='modal' ref={elModal}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, culpa.
-      </p>
+      {getDynamicComponent(modal)}
       <button
         className='modal__closeBtn'
         onClick={() => {
           elModal.current.close();
-          setModal({ noteId: null, toShow: false });
+          setModal({ cmp: null, setCmp: null, toShow: false });
         }}>
         CLOSE
       </button>
