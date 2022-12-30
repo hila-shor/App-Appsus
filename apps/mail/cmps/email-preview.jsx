@@ -1,4 +1,4 @@
-const { useState, Fragment } = React
+const { useState } = React
 const {Link} = ReactRouterDOM
 
 import {utilService} from '../../../services/util.service.js'
@@ -11,23 +11,21 @@ export function EmailPreview({email, onRemoveEmail}){
 
 
   function setEmailFrom(email){
-    console.log(email.from)
     let emailFrom = email.from
     let atIdx =  emailFrom.indexOf("@")
-    console.log(atIdx)
-   
+
     let nameFrom =  emailFrom.substring(0, atIdx)
     if (atIdx !== -1) return nameFrom
   
 }
 
-  return <div className="email-preview grid-container"
+  return <div className={`email-preview grid-container ${email.isRead ? '' : 'unread'}`}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}>
             <div className='item item1'>🏳️</div>
             <div className='item item2'>
               {(email.isStarred)? 
-                            <i className="fa-sharp fa-solid fa-starName"></i>:<i class="fa-regular fa-star"></i>
+                            <i className="fa-sharp fa-solid fa-starName"></i>:<i className="fa-regular fa-star"></i>
                             }  
             </div>
             <Link to={`/email/${email.id}`}>

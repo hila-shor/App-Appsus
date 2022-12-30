@@ -1,3 +1,10 @@
+i.fas{
+  padding-right: 1em;
+}
+
+span{
+  padding-left: 1em;
+}
 /* LAYOUT */
 
 .app-aside.side-nav{
@@ -12,7 +19,7 @@
 /* Compose */
 .compose-btn {
   gap: 0.625rem;
- 
+
   /* border:0.15em solid var(--clr-input) ; */
   border:0.10em solid  #627885 ;
   border-radius: 1em;
