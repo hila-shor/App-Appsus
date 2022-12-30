@@ -13,6 +13,7 @@ export const NoteService = {
   save,
   getDefaultFilter,
   getEmptyNote,
+  makeTodos,
 };
 
 function query(filterBy = getDefaultFilter()) {
@@ -48,6 +49,16 @@ function getEmptyNote() {
     owner: 'Andrey',
     info: {},
   };
+}
+
+function makeTodos(tasks) {
+  return tasks.map((task) => {
+    return {
+      id: utilService.makeId(),
+      txt: task,
+      doneAt: null,
+    };
+  });
 }
 
 function _createNotes() {

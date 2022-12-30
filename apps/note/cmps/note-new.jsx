@@ -23,31 +23,46 @@ export function NoteNew({ loadNotes }) {
   }
 
   function createNote(value) {
+    console.log('create note', noteType);
     let newNote = NoteService.getEmptyNote();
-    if (noteType.localeCompare('note-txt')) {
+    if (!noteType.localeCompare('note-txt')) {
+      console.log(noteType.localeCompare('note-txt'));
       newNote = {
         ...newNote,
         type: 'note-txt',
         info: { ...newNote.info, txt: value },
       };
       NoteService.save(newNote).then((note) => {
-        console.log('note saved', note);
+        console.log('note text saved', note);
         loadNotes();
         //   showSuccessMsg('Car saved!');
       });
-    } else if (noteType.localeCompare('note-img')) {
+    } else if (!noteType.localeCompare('note-img')) {
+      console.log(noteType.localeCompare('note-img'));
       newNote = {
         ...newNote,
         type: 'note-img',
         info: { ...newNote.info, url: value },
       };
-      console.log('newNote', newNote);
       NoteService.save(newNote).then((note) => {
+        console.log('note text saved', note);
         loadNotes();
         //   showSuccessMsg('Car saved!');
       });
-    } else if (noteType.localeCompare('note-todo')) {
-      console.log('adding todo', value);
+    } else if (!noteType.localeCompare('note-todos')) {
+      const taskList = value.split(', ');
+      const todos = NoteService.makeTodos(taskList);
+
+      newNote = {
+        ...newNote,
+        type: 'note-todos',
+        info: { ...newNote.info, todos },
+      };
+      NoteService.save(newNote).then((note) => {
+        console.log('note todo saved', note);
+        loadNotes();
+        //   showSuccessMsg('Car saved!');
+      });
     }
   }
 
@@ -66,19 +81,19 @@ export function NoteNew({ loadNotes }) {
       <button
         type='button'
         className='btn-note'
-        onClick={() => onChangeType(note - txt)}>
+        onClick={() => setNoteType('note-txt')}>
         <span className='btn-icon'>📝️</span>
       </button>
       <button
         type='button'
         className='btn-img'
-        onClick={() => onChangeType(note - img)}>
+        onClick={() => setNoteType('note-img')}>
         <span className='btn-icon'>🖼️</span>
       </button>
       <button
         type='button'
         className='btn-todo'
-        onClick={() => onChangeType(note - todo)}>
+        onClick={() => setNoteType('note-todos')}>
         <span className='btn-icon'>📋️</span>
       </button>
 
