@@ -14,7 +14,7 @@ export function NoteIndex() {
   // notes
   const [notes, setNotes] = useState([]);
   // edit/ new note modal
-  const [modal, toShow] = useState(false);
+  const [modal, setModal] = useState({ noteId: null, toShow: false });
 
   //load notes
   useEffect(() => {
@@ -23,11 +23,6 @@ export function NoteIndex() {
   function loadNotes() {
     NoteService.query().then((notes) => setNotes(notes));
   }
-
-  //edit notes
-  // useEffect(() => {
-  //   console.log('useEffect on modal');
-  // }, [modal]);
 
   // CRUD
   function removeNote(noteId) {
@@ -40,7 +35,7 @@ export function NoteIndex() {
 
   function editNote(noteId) {
     console.log('editing note: ', noteId);
-    toShow(true);
+    setModal({ noteId, toShow: true });
   }
 
   if (!notes) <div>Loading</div>;
@@ -48,12 +43,12 @@ export function NoteIndex() {
 
   return (
     <div className='app-container'>
-      {modal && <Modal />}
+      {modal.toShow && <Modal modal={modal} setModal={setModal} />}
 
       <AppAside />
       <div className='app-main'>
         <AppSearch setNotes={setNotes} loadNotes={loadNotes} />
-        <AppBoard notes={notes} removeNote={removeNote} />
+        <AppBoard notes={notes} removeNote={removeNote} editNote={editNote} />
       </div>
     </div>
   );

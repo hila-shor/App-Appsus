@@ -35,7 +35,7 @@ export function NoteNew({ loadNotes }) {
       NoteService.save(newNote).then((note) => {
         console.log('note text saved', note);
         loadNotes();
-        //   showSuccessMsg('Car saved!');
+        //   showSuccessMsg('Note saved!');
       });
     } else if (!noteType.localeCompare('note-img')) {
       console.log(noteType.localeCompare('note-img'));
@@ -47,7 +47,7 @@ export function NoteNew({ loadNotes }) {
       NoteService.save(newNote).then((note) => {
         console.log('note text saved', note);
         loadNotes();
-        //   showSuccessMsg('Car saved!');
+        //   showSuccessMsg('Note saved!');
       });
     } else if (!noteType.localeCompare('note-todos')) {
       const taskList = value.split(', ');
@@ -61,7 +61,7 @@ export function NoteNew({ loadNotes }) {
       NoteService.save(newNote).then((note) => {
         console.log('note todo saved', note);
         loadNotes();
-        //   showSuccessMsg('Car saved!');
+        //   showSuccessMsg('Note saved!');
       });
     }
   }
