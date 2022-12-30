@@ -44,7 +44,7 @@ export function NoteIndex() {
   }
 
   if (!notes) <div>Loading</div>;
-  // console.log(notes);
+  // console.log('to board', notes);
 
   return (
     <div className='app-container'>
@@ -52,8 +52,8 @@ export function NoteIndex() {
 
       <AppAside />
       <div className='app-main'>
-        <AppSearch />
-        <AppBoard notes={notes} removeNote={removeNote} editNote={editNote} />
+        <AppSearch setNotes={setNotes} loadNotes={loadNotes} />
+        <AppBoard notes={notes} removeNote={removeNote} />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import { NotePreview } from './note-preview.jsx';
 import { NoteService } from '../services/note.service.js';
 
-export function AppBoard({ notes, removeNote, editNote }) {
-  // console.log('board', notes);
+export function AppBoard({ notes, removeNote }) {
+  console.log('board', notes);
 
   return (
     <section className='note-board'>
@@ -12,7 +12,6 @@ export function AppBoard({ notes, removeNote, editNote }) {
           type={note.type}
           note={note}
           removeNote={removeNote}
-          editNote={editNote}
         />
       ))}
     </section>

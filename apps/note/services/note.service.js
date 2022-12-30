@@ -45,7 +45,6 @@ function getDefaultFilter() {
 
 function getEmptyNote() {
   return {
-    id: utilService.makeId,
     owner: 'Andrey',
     info: {},
   };

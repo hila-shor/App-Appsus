@@ -1,7 +1,7 @@
 const { useState } = React;
 import { NoteService } from '../services/note.service.js';
 
-export function NoteNew() {
+export function NoteNew({ loadNotes }) {
   const [noteToCreate, setNoteToCreate] = useState(NoteService.getEmptyNote());
   const [noteType, setNoteType] = useState('note-text');
 
@@ -18,29 +18,36 @@ export function NoteNew() {
 
   function onSaveNote(ev) {
     ev.preventDefault();
-    let { value, name: field } = ev.target;
-
-    const type = ev.nativeEvent.submitter.name;
-    console.log('name', type);
-    console.log('ev.target', ev.target);
-
-    ev.target[0].value;
-    if (!value) setNoteType(type);
-    else createNote(value);
-
-    /*     NoteService.save(noteToCreate).then((note) => {
-      console.log('note saved', note);
-      //   showSuccessMsg('Car saved!');
-      //   navigate('/car');
-    }); */
+    const value = ev.target[0].value;
+    createNote(value);
   }
 
   function createNote(value) {
-    console.log('in create', value);
     let newNote = NoteService.getEmptyNote();
-    if (noteType === 'note-txt') {
-      newNote = { ...newNote, info: { ...newNote.info, txt: value } };
+    if (noteType.localeCompare('note-txt')) {
+      newNote = {
+        ...newNote,
+        type: 'note-txt',
+        info: { ...newNote.info, txt: value },
+      };
+      NoteService.save(newNote).then((note) => {
+        console.log('note saved', note);
+        loadNotes();
+        //   showSuccessMsg('Car saved!');
+      });
+    } else if (noteType.localeCompare('note-img')) {
+      newNote = {
+        ...newNote,
+        type: 'note-img',
+        info: { ...newNote.info, url: value },
+      };
       console.log('newNote', newNote);
+      NoteService.save(newNote).then((note) => {
+        loadNotes();
+        //   showSuccessMsg('Car saved!');
+      });
+    } else if (noteType.localeCompare('note-todo')) {
+      console.log('adding todo', value);
     }
   }
 
@@ -53,18 +60,29 @@ export function NoteNew() {
       <input
         type='text'
         name='new-note'
-        className='input-new-note'
+        className='input input-new-note'
         placeholder={getPlaceholder(noteType)}
       />
-      <button className='btn-note' name='note-txt' onChange={handleChange}>
+      <button
+        type='button'
+        className='btn-note'
+        onClick={() => onChangeType(note - txt)}>
         <span className='btn-icon'>📝️</span>
       </button>
-      <button className='btn-img' name='note-img' onChange={handleChange}>
+      <button
+        type='button'
+        className='btn-img'
+        onClick={() => onChangeType(note - img)}>
         <span className='btn-icon'>🖼️</span>
       </button>
-      <button className='btn-todo' name='note-todo' onChange={handleChange}>
+      <button
+        type='button'
+        className='btn-todo'
+        onClick={() => onChangeType(note - todo)}>
         <span className='btn-icon'>📋️</span>
       </button>
+
+      <button className='btn-input'>Add</button>
     </form>
   );
 }
