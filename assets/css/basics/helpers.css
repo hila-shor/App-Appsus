@@ -30,11 +30,22 @@
 }
 
 /* ======= LIMITED TEXT =======   */
+/* limit for 3 lines  */
 .limitedText {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* 1 line limit, add overflow: hidden; to parent  */
+.ellipsis {
+    text-overflow: ellipsis;
+    /* enables ellipsis */
+    white-space: nowrap;
+    /* keeps the text in a single line */
+    overflow: hidden;
+    /* keeps the element from overflowing its parent */
 }
 
 /* ========= HIDDEN ======== */

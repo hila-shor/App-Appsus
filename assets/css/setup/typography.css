@@ -11,6 +11,11 @@
 }
 
 @font-face {
+    font-family: Ubuntu-medium;
+    src: url(../../fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
     font-family: Dosis;
     src: url(../../fonts/Dosis/Dosis-Regular.ttf);
 }
@@ -31,6 +36,7 @@
     font-family: fa-solid;
     src: url(../../fonts/fa-icons/fa-solid-900.ttf);
 }
+
 @font-face {
     font-family: fa-brands;
     src: url(../../fonts/fa-icons/fa-brands-400.ttf);

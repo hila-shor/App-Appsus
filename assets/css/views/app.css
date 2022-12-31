@@ -8,7 +8,8 @@
 }
 
 .app-aside {
-    width: 400px;
+    width: 300px;
+    min-width: 250px;
     padding: var(--main-padding);
     border-inline-end: 1px solid var(--clr-secondary);
 
