@@ -1,12 +1,25 @@
-export function EmailFilter({filters, onFiltersChange}) {
+const { useState, useEffect, useRef } = React
 
-    function onSearchTermChange({target}) {
-        onFiltersChange({txt: target.value})
-    }
+export function EmailFilter({filters,  onSetFilter}) {
+    console.log(' EmailFilter filters', filters)
+
+    const [filterByToEdit, setFilterByToEdit]= useState(filters)
+    console.log(' EmailFilter filters', filterByToEdit)
+
+    function handleChange({target}){
+        let {value, name:field, type}= target
+        value = type === 'number'? +value : value;
+        setFilterByToEdit((prevFilter)=>{
+          return {...prevFilter, [field]:value}
+        })
+        onSetFilter(filterByToEdit)
+      }
+
 
     function onReadStatusChange({target}) {
         const status = target.value
-        onFiltersChange({isRead: status === 'all' ? null : status === 'read'})
+        onSetFilter({isRead: status === 'all' ? null : status === 'read'})
+        console.log('onReadStatusChange filterByToEdit' , filterByToEdit)
     }
 
     let selectedReadStatus = 'all'
@@ -20,9 +33,10 @@ export function EmailFilter({filters, onFiltersChange}) {
         <form>
             <input
                 type="text"
-                name="search"
+                name="txt"
                 placeholder="Search emails"
-                onChange={onSearchTermChange}
+                onChange={handleChange}
+                value={filterByToEdit.txt}
             />
             {filters.status === 'inbox' &&
                 <select value={selectedReadStatus} onChange={onReadStatusChange}>

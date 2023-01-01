@@ -3,7 +3,6 @@ const { useState, useEffect } = React
 import {EmailList} from "../cmps/email-list.jsx"
 import {EmailAside} from "../cmps/email-aside.jsx"
 import {EmailFilter} from "../cmps/email-filter.jsx"
-
 import {emailService} from "../services/email.service.js"
 import {showErrorMsg, showSuccessMsg} from "../../../services/event-bus.service.js"
 
@@ -23,6 +22,7 @@ useEffect(() => {
 
 function loadEmails() {
     emailService.query(filters).then(setEmails)
+    // emailService.countIsRead().then(setUnreadCount)
     emailService.query().then(emails => {
         setUnreadCount(emails.filter(email => !email.isRead).length)
     })
@@ -44,8 +44,9 @@ function loadEmails() {
         emailService.query(newFilters).then(setEmails)
     }
 
-    function onFiltersChanged(changedFilters) {
+    function  onSetFilter(changedFilters) {
         _applyFilters({...filters, ...changedFilters})
+        
     }
 
     function onFolderChanged(folder) {
@@ -53,6 +54,7 @@ function loadEmails() {
             ...filters,
             status: folder
         }
+        console.log('onFolderChanged ', changedFilters)
         delete changedFilters.isRead
         delete changedFilters.isStarred
 
@@ -67,7 +69,7 @@ function loadEmails() {
     return <section className="email-index app-container">
             <EmailAside onFolderChange={onFolderChanged} unreadCount={unreadCount}/>
             <div className="app-main">
-                <EmailFilter filters={filters} onFiltersChange={onFiltersChanged}/>
+                <EmailFilter filters={filters} onSetFilter={onSetFilter}/>
                 <EmailList emails={emails} onRemoveEmail={onRemoveEmail}/>
             </div>
         </section>

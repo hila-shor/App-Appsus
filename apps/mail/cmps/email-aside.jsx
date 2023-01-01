@@ -1,6 +1,7 @@
 const { useState } = React
 
 export function EmailAside({onFolderChange, unreadCount=0}) {
+    
     const [activeFolder, setActiveFolder] = useState('inbox')
 
     function onFolderSelected(folder) {
